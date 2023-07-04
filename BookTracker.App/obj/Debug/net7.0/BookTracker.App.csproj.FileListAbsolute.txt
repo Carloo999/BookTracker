@@ -1,7 +1,6 @@
 C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\bin\Debug\net7.0\appsettings.json
 C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\bin\Debug\net7.0\BookTracker.App.staticwebassets.runtime.json
-C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\bin\Debug\net7.0\app.db
 C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\bin\Debug\net7.0\BookTracker.App.exe
 C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\bin\Debug\net7.0\BookTracker.App.deps.json
 C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\bin\Debug\net7.0\BookTracker.App.runtimeconfig.json
@@ -291,3 +290,4 @@ C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTrac
 C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\obj\Debug\net7.0\BookTracker.App.pdb
 C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\obj\Debug\net7.0\BookTracker.App.genruntimeconfig.cache
 C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\obj\Debug\net7.0\ref\BookTracker.App.dll
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\bin\Debug\net7.0\app.db

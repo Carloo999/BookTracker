@@ -1,0 +1,12 @@
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\bin\Debug\net7.0\BookTracker.Core.deps.json
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\bin\Debug\net7.0\BookTracker.Core.dll
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\bin\Debug\net7.0\BookTracker.Core.pdb
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\obj\Debug\net7.0\BookTracker.Core.csproj.AssemblyReference.cache
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\obj\Debug\net7.0\BookTracker.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\obj\Debug\net7.0\BookTracker.Core.AssemblyInfoInputs.cache
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\obj\Debug\net7.0\BookTracker.Core.AssemblyInfo.cs
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\obj\Debug\net7.0\BookTracker.Core.csproj.CoreCompileInputs.cache
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\obj\Debug\net7.0\BookTracker.Core.dll
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\obj\Debug\net7.0\refint\BookTracker.Core.dll
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\obj\Debug\net7.0\BookTracker.Core.pdb
+C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.Core\obj\Debug\net7.0\ref\BookTracker.Core.dll
