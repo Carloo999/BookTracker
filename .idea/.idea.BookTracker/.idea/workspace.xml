@@ -10,101 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e87395e9-e431-4424-8e1f-07a8183eb9b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BookTracker/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BookTracker/.idea/efCoreCommonOptions.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BookTracker/.idea/efCoreDialogsState.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/BookTracker/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/BookTracker/FileContentIndex/read.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/BookTracker/v17/.futdcache.v2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/BookTracker/v17/.suo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/booktracker.metadata.v6.1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/booktracker.projects.v6.1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/BookTracker.App.csproj.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/Data/Migrations/20230619112001_Initial.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/Data/Migrations/20230619115824_Add new columns.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/Data/Migrations/20230619115824_Add new columns.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/Data/Migrations/20230704202008_Changed User.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/Data/Migrations/20230704202008_Changed User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/Models/ApplicationUser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/app.db-shm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/app.db-wal" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/obj/BookTracker.App.csproj.EntityFrameworkCore.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/project.razor.vs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.App/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.Core/bin/Debug/net7.0/BookTracker.Core.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.Core/bin/Debug/net7.0/BookTracker.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.Core/bin/Debug/net7.0/BookTracker.Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.Core/obj/Debug/net7.0/BookTracker.Core.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.Core/obj/Debug/net7.0/BookTracker.Core.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.Core/obj/Debug/net7.0/BookTracker.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.Core/obj/Debug/net7.0/BookTracker.Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.Core/obj/Debug/net7.0/ref/BookTracker.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.Core/obj/Debug/net7.0/refint/BookTracker.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookTracker.Core/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookTracker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookTracker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ConfirmEmail.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ConfirmEmail.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ExternalLogin.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ExternalLogin.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ForgotPassword.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ForgotPassword.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/LogOut.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/LogOut.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Login.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/LoginWith2fa.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/LoginWith2fa.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Email.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Email.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Register.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Register.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ResetPassword.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/ResetPassword.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Shared/_LoginPartial.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Data/Migrations/00000000000000_CreateIdentitySchema.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Data/Migrations/00000000000000_CreateIdentitySchema.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Data/Migrations/20230619112001_Initial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Data/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Data/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Pages/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Pages/Shared/_LoginPartial.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/app.db-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/app.db-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.exe" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/BookTracker.App.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/BookTracker.App.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/BookTracker.App.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/BookTracker.App.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/ref/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/ref/BookTracker.App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/refint/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/refint/BookTracker.App.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.Core/BookTracker.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.Core/BookTracker.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.Core/obj/BookTracker.Core.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.Core/obj/BookTracker.Core.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.Core/obj/BookTracker.Core.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.Core/obj/BookTracker.Core.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.Core/obj/Debug/net7.0/BookTracker.Core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.Core/obj/Debug/net7.0/BookTracker.Core.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.Core/obj/Debug/net7.0/BookTracker.Core.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.Core/obj/Debug/net7.0/BookTracker.Core.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.Core/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.Core/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.Core/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.Core/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.Core/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.Core/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.Core/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.Core/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,9 +38,34 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="3f68b6c0-8263-4ddd-94fd-9c27e47a773c" />
+        <option name="url" value="https://github.com/Carloo999/BookTracker.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet" root0="ESSENTIAL" />
-    <setting file="mock:///AIAssistantSnippet" root0="ESSENTIAL" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6da59a1c9a96b9118be81b526ed0f46e5f476070c63f9084415fbfdccb111e/IdentityServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/83e91dece2a44ebac8dd1362114111598bced18cf67befa613f34c6abb94e651/IUserStore.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f91195dc1f983d6ec69125bd192fea551738920a3ae32077f21c5af5b9/UserManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BookTracker.App/wwwroot/css/bootstrap/bootstrap.min.css.map" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -151,7 +95,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.environmentSetup",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -221,7 +165,8 @@
       <workItem from="1687165074363" duration="1478000" />
       <workItem from="1687166590574" duration="4228000" />
       <workItem from="1687545851581" duration="148000" />
-      <workItem from="1688500705692" duration="1798000" />
+      <workItem from="1688500705692" duration="4584000" />
+      <workItem from="1688896192020" duration="2098000" />
     </task>
     <task id="LOCAL-00001" summary="Base structure">
       <created>1687164828509</created>
@@ -230,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687164828509</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Remove IdentitySchema, switched identity user to ApplicationUser&#10;&#10;Deleted unnecessary file &quot;CreateIdentitySchema.Designer.cs&quot;. Changed all instances of &quot;IdentityUser&quot; to &quot;ApplicationUser&quot; to have more control over project's user entity, including adding a new property field. Removed first and last name properties and added privacy status for the ApplicationUser. This change is related to the introduction of the feature &quot;Profile Picture and User privacy status&quot;.">
+      <option name="closed" value="true" />
+      <created>1688502602475</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1688502602475</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +222,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Base structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Base structure" />
+    <MESSAGE value="Remove IdentitySchema, switched identity user to ApplicationUser&#10;&#10;Deleted unnecessary file &quot;CreateIdentitySchema.Designer.cs&quot;. Changed all instances of &quot;IdentityUser&quot; to &quot;ApplicationUser&quot; to have more control over project's user entity, including adding a new property field. Removed first and last name properties and added privacy status for the ApplicationUser. This change is related to the introduction of the feature &quot;Profile Picture and User privacy status&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove IdentitySchema, switched identity user to ApplicationUser&#10;&#10;Deleted unnecessary file &quot;CreateIdentitySchema.Designer.cs&quot;. Changed all instances of &quot;IdentityUser&quot; to &quot;ApplicationUser&quot; to have more control over project's user entity, including adding a new property field. Removed first and last name properties and added privacy status for the ApplicationUser. This change is related to the introduction of the feature &quot;Profile Picture and User privacy status&quot;." />
   </component>
 </project>
