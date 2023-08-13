@@ -11,19 +11,18 @@
   <component name="ChangeListManager">
     <list default="true" id="e87395e9-e431-4424-8e1f-07a8183eb9b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookTracker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookTracker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Register.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Login.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Register.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/app.db-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/app.db-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/ref/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/ref/BookTracker.App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/refint/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/refint/BookTracker.App.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.Core/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.Core/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +53,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet" root0="ESSENTIAL" />
     <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
@@ -62,6 +62,10 @@
     <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet" root0="ESSENTIAL" />
     <setting file="mock:///AIAssistantSnippet" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6da59a1c9a96b9118be81b526ed0f46e5f476070c63f9084415fbfdccb111e/IdentityServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/83e91dece2a44ebac8dd1362114111598bced18cf67befa613f34c6abb94e651/IUserStore.cs" root0="SKIP_HIGHLIGHTING" />
@@ -88,7 +92,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.22869319",
     "git-widget-placeholder": "development",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/benec/Documents/0 - Coding/0 - Projects/0 - Github/BookTracker/BookTracker.App/Areas",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -166,7 +172,9 @@
       <workItem from="1687166590574" duration="4228000" />
       <workItem from="1687545851581" duration="148000" />
       <workItem from="1688500705692" duration="4584000" />
-      <workItem from="1688896192020" duration="2098000" />
+      <workItem from="1688896192020" duration="4358000" />
+      <workItem from="1689428382844" duration="642000" />
+      <workItem from="1691961663129" duration="2871000" />
     </task>
     <task id="LOCAL-00001" summary="Base structure">
       <created>1687164828509</created>
@@ -183,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688502602475</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add username field to registration form&#10;&#10;Updated the registration form to include a field for username input, and adjusted the 'SetUserNameAsync' method call to use the input username instead of the email. This change was necessary to extend control over the project's user entity and allow users to register a unique username in addition to their email. This improves user experience and prepares for future features such as user profiles.">
+      <option name="closed" value="true" />
+      <created>1688899676996</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1688899676996</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +239,26 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Base structure" />
     <MESSAGE value="Remove IdentitySchema, switched identity user to ApplicationUser&#10;&#10;Deleted unnecessary file &quot;CreateIdentitySchema.Designer.cs&quot;. Changed all instances of &quot;IdentityUser&quot; to &quot;ApplicationUser&quot; to have more control over project's user entity, including adding a new property field. Removed first and last name properties and added privacy status for the ApplicationUser. This change is related to the introduction of the feature &quot;Profile Picture and User privacy status&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove IdentitySchema, switched identity user to ApplicationUser&#10;&#10;Deleted unnecessary file &quot;CreateIdentitySchema.Designer.cs&quot;. Changed all instances of &quot;IdentityUser&quot; to &quot;ApplicationUser&quot; to have more control over project's user entity, including adding a new property field. Removed first and last name properties and added privacy status for the ApplicationUser. This change is related to the introduction of the feature &quot;Profile Picture and User privacy status&quot;." />
+    <MESSAGE value="Add username field to registration form&#10;&#10;Updated the registration form to include a field for username input, and adjusted the 'SetUserNameAsync' method call to use the input username instead of the email. This change was necessary to extend control over the project's user entity and allow users to register a unique username in addition to their email. This improves user experience and prepares for future features such as user profiles." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add username field to registration form&#10;&#10;Updated the registration form to include a field for username input, and adjusted the 'SetUserNameAsync' method call to use the input username instead of the email. This change was necessary to extend control over the project's user entity and allow users to register a unique username in addition to their email. This improves user experience and prepares for future features such as user profiles." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Login.cshtml.cs</url>
+          <line>99</line>
+          <properties documentPath="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\Areas\Identity\Pages\Account\Login.cshtml.cs" initialLine="99" containingFunctionPresentation="Method 'OnPostAsync'">
+            <startOffsets>
+              <option value="3898" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3899" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
