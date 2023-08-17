@@ -12,13 +12,18 @@
     <list default="true" id="e87395e9-e431-4424-8e1f-07a8183eb9b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookTracker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookTracker/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Login.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Register.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/app.db-shm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/app.db-wal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/BookTracker.App.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/BookTracker.App.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db-wal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/app.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/ref/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/ref/BookTracker.App.dll" afterDir="false" />
@@ -76,6 +81,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2RPttE95M3jIQtz6kc6tJFROqGO" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -84,34 +92,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.22869319",
-    "git-widget-placeholder": "development",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/benec/Documents/0 - Coding/0 - Projects/0 - Github/BookTracker/BookTracker.App/Areas",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.12642045&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/benec/Documents/0 - Coding/0 - Projects/0 - Github/BookTracker/BookTracker.App/Areas&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\benec\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\benec\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\benec\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\benec\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\benec\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\benec\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BookTracker.App: IIS Express">
     <configuration name="BookTracker.App: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BookTracker.App/BookTracker.App.csproj" />
@@ -174,7 +182,12 @@
       <workItem from="1688500705692" duration="4584000" />
       <workItem from="1688896192020" duration="4358000" />
       <workItem from="1689428382844" duration="642000" />
-      <workItem from="1691961663129" duration="2871000" />
+      <workItem from="1691961663129" duration="3456000" />
+      <workItem from="1692030215491" duration="1273000" />
+      <workItem from="1692031564687" duration="8235000" />
+      <workItem from="1692048485902" duration="100000" />
+      <workItem from="1692122649625" duration="1496000" />
+      <workItem from="1692292258491" duration="1995000" />
     </task>
     <task id="LOCAL-00001" summary="Base structure">
       <created>1687164828509</created>
@@ -199,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688899676996</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updated user login and registration functionalities&#10;&#10;Users can now register with a unique username in addition to their email.">
+      <option name="closed" value="true" />
+      <created>1691964992689</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691964992689</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,23 +261,24 @@
     <MESSAGE value="Base structure" />
     <MESSAGE value="Remove IdentitySchema, switched identity user to ApplicationUser&#10;&#10;Deleted unnecessary file &quot;CreateIdentitySchema.Designer.cs&quot;. Changed all instances of &quot;IdentityUser&quot; to &quot;ApplicationUser&quot; to have more control over project's user entity, including adding a new property field. Removed first and last name properties and added privacy status for the ApplicationUser. This change is related to the introduction of the feature &quot;Profile Picture and User privacy status&quot;." />
     <MESSAGE value="Add username field to registration form&#10;&#10;Updated the registration form to include a field for username input, and adjusted the 'SetUserNameAsync' method call to use the input username instead of the email. This change was necessary to extend control over the project's user entity and allow users to register a unique username in addition to their email. This improves user experience and prepares for future features such as user profiles." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add username field to registration form&#10;&#10;Updated the registration form to include a field for username input, and adjusted the 'SetUserNameAsync' method call to use the input username instead of the email. This change was necessary to extend control over the project's user entity and allow users to register a unique username in addition to their email. This improves user experience and prepares for future features such as user profiles." />
+    <MESSAGE value="Updated user login and registration functionalities&#10;&#10;Users can now register with a unique username in addition to their email." />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Login.cshtml.cs</url>
-          <line>99</line>
-          <properties documentPath="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\Areas\Identity\Pages\Account\Login.cshtml.cs" initialLine="99" containingFunctionPresentation="Method 'OnPostAsync'">
+          <url>file://$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs</url>
+          <line>119</line>
+          <properties documentPath="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\Areas\Identity\Pages\Account\Manage\Index.cshtml.cs" initialLine="119" containingFunctionPresentation="Method 'OnPostAsync'">
             <startOffsets>
-              <option value="3898" />
+              <option value="4268" />
             </startOffsets>
             <endOffsets>
-              <option value="3899" />
+              <option value="4301" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
