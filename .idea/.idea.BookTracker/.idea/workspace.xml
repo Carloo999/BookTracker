@@ -9,20 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e87395e9-e431-4424-8e1f-07a8183eb9b5" name="Changes" comment="">
+    <list default="true" id="e87395e9-e431-4424-8e1f-07a8183eb9b5" name="Changes" comment="Add profile picture and username updates on user's profile page&#10;&#10;Added functionality to let users upload a profile picture and change their usernames. Displayed user's profile picture on the navbar. Also, changed the database path in the appsettings.json file, and made necessary changes in the Index.cshtml and _LoginPartial.cshtml files for user interface. Enforced limit on username changes. This will enhance user identification, allow personalisation and improve user experience. The changes made to database path allow better project management.">
+      <change afterPath="$PROJECT_DIR$/BookTracker.App/Pages/BookList.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookTracker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookTracker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Login.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/BookTracker.App.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/BookTracker.App.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/app.db-wal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/BookTracker.App.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/app.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/bin/Debug/net7.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BookTracker.App/obj/Debug/net7.0/BookTracker.App.pdb" afterDir="false" />
@@ -187,7 +179,7 @@
       <workItem from="1692031564687" duration="8235000" />
       <workItem from="1692048485902" duration="100000" />
       <workItem from="1692122649625" duration="1496000" />
-      <workItem from="1692292258491" duration="1995000" />
+      <workItem from="1692292258491" duration="4743000" />
     </task>
     <task id="LOCAL-00001" summary="Base structure">
       <created>1687164828509</created>
@@ -220,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691964992689</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add profile picture and username updates on user's profile page&#10;&#10;Added functionality to let users upload a profile picture and change their usernames. Displayed user's profile picture on the navbar. Also, changed the database path in the appsettings.json file, and made necessary changes in the Index.cshtml and _LoginPartial.cshtml files for user interface. Enforced limit on username changes. This will enhance user identification, allow personalisation and improve user experience. The changes made to database path allow better project management.">
+      <option name="closed" value="true" />
+      <created>1692294770871</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1692294770871</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +262,8 @@
     <MESSAGE value="Remove IdentitySchema, switched identity user to ApplicationUser&#10;&#10;Deleted unnecessary file &quot;CreateIdentitySchema.Designer.cs&quot;. Changed all instances of &quot;IdentityUser&quot; to &quot;ApplicationUser&quot; to have more control over project's user entity, including adding a new property field. Removed first and last name properties and added privacy status for the ApplicationUser. This change is related to the introduction of the feature &quot;Profile Picture and User privacy status&quot;." />
     <MESSAGE value="Add username field to registration form&#10;&#10;Updated the registration form to include a field for username input, and adjusted the 'SetUserNameAsync' method call to use the input username instead of the email. This change was necessary to extend control over the project's user entity and allow users to register a unique username in addition to their email. This improves user experience and prepares for future features such as user profiles." />
     <MESSAGE value="Updated user login and registration functionalities&#10;&#10;Users can now register with a unique username in addition to their email." />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Add profile picture and username updates on user's profile page&#10;&#10;Added functionality to let users upload a profile picture and change their usernames. Displayed user's profile picture on the navbar. Also, changed the database path in the appsettings.json file, and made necessary changes in the Index.cshtml and _LoginPartial.cshtml files for user interface. Enforced limit on username changes. This will enhance user identification, allow personalisation and improve user experience. The changes made to database path allow better project management." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add profile picture and username updates on user's profile page&#10;&#10;Added functionality to let users upload a profile picture and change their usernames. Displayed user's profile picture on the navbar. Also, changed the database path in the appsettings.json file, and made necessary changes in the Index.cshtml and _LoginPartial.cshtml files for user interface. Enforced limit on username changes. This will enhance user identification, allow personalisation and improve user experience. The changes made to database path allow better project management." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -280,7 +281,26 @@
           </properties>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BookTracker.App/Pages/BookList.razor</url>
+          <line>18</line>
+          <properties documentPath="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\BookTracker\BookTracker.App\Pages\BookList.razor" initialLine="18" isMultiMethodBreakpoint="true">
+            <option name="multiMethodBreakpoint" value="true" />
+            <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#BookTracker.App.Pages.BookList" memberName="Username" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
