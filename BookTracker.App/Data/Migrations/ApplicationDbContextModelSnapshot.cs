@@ -27,6 +27,9 @@ namespace BookTracker.App.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("BookListId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("TEXT");
@@ -83,6 +86,9 @@ namespace BookTracker.App.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BookListId")
+                        .IsUnique();
+
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -91,6 +97,50 @@ namespace BookTracker.App.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("User", "Identity");
+                });
+
+            modelBuilder.Entity("BookTracker.Core.Models.Book", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("BookListId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Pages")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PagesRead")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookListId");
+
+                    b.ToTable("Book", "Identity");
+                });
+
+            modelBuilder.Entity("BookTracker.Core.Models.BookList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BookList", "Identity");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -221,6 +271,28 @@ namespace BookTracker.App.Migrations
                     b.ToTable("UserTokens", "Identity");
                 });
 
+            modelBuilder.Entity("BookTracker.App.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("BookTracker.Core.Models.BookList", "BookList")
+                        .WithOne("User")
+                        .HasForeignKey("BookTracker.App.Models.ApplicationUser", "BookListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BookList");
+                });
+
+            modelBuilder.Entity("BookTracker.Core.Models.Book", b =>
+                {
+                    b.HasOne("BookTracker.Core.Models.BookList", "BookList")
+                        .WithMany("Books")
+                        .HasForeignKey("BookListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BookList");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -269,6 +341,14 @@ namespace BookTracker.App.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BookTracker.Core.Models.BookList", b =>
+                {
+                    b.Navigation("Books");
+
+                    b.Navigation("User")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

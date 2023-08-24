@@ -1,7 +1,9 @@
 ﻿using BookTracker.App.Models;
+using BookTracker.Core.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace BookTracker.App.Data;
 
@@ -19,6 +21,10 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         builder.Entity<ApplicationUser>(entity =>
         {
             entity.ToTable(name: "User");
+
+            entity.HasOne(a => a.BookList)
+                .WithOne(b => b.User)
+                .HasForeignKey<ApplicationUser>(a => a.BookListId);
         });
         builder.Entity<IdentityRole>(entity =>
         {
@@ -43,6 +49,17 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         builder.Entity<IdentityUserToken<string>>(entity =>
         {
             entity.ToTable("UserTokens");
+        });
+        builder.Entity<BookList>(entity =>
+        {
+            entity.ToTable("BookList");
+        });
+        builder.Entity<Book>(entity =>
+        {
+            entity.ToTable("Book");
+            entity.HasOne(b => b.BookList)
+                .WithMany(bl => bl.Books)
+                .HasForeignKey(b => b.BookListId);
         });
     }
 }
