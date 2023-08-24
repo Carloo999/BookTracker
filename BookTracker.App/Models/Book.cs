@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BookTracker.Core.Models;
+namespace BookTracker.App.Models;
 
 public class Book
 {

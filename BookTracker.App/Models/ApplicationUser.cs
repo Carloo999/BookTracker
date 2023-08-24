@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using BookTracker.Core.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace BookTracker.App.Models;

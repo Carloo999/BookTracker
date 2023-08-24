@@ -3,18 +3,54 @@
 @using Microsoft.AspNetCore.Identity
 @using BookTracker.App.Models
 @using System.Security.Claims
+@using BookTracker.App.Data
+@using Microsoft.EntityFrameworkCore
 
 @inject UserManager<ApplicationUser> UserManager
 @inject AuthenticationStateProvider GetAuthenticationStateAsync
+@inject ApplicationDbContext DbContext
 
-<h1>@Username</h1>
+@if (!Result)
+{
+    <h1>No User was found or profile is set to private</h1>
+}
+
+else 
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Pages Read</th>
+            <th>Your Rating</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (Book book in Books)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Pages</td>
+                <td>@book.PagesRead</td>
+                <td>@book.Rating</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
 
 @code {
     [Parameter]
     public string Username { get; set; }
 
+    public bool Result;
     public ApplicationUser? User { get; set; }
-    
+    public ICollection<Book> Books { get; set; }
+
     protected override async Task OnInitializedAsync()
     {
         if (string.IsNullOrEmpty(Username))
@@ -23,12 +59,28 @@
             ClaimsPrincipal claims = authState.User;
             User = await UserManager.GetUserAsync(claims);
             Username = User.UserName;
+            Result = true;
         }
         else
         {
             User = await UserManager.FindByNameAsync(Username);
-            if (User is null)
-                Username = "Not Found";
+            Result = User is not null;
         }
+
+        if (Result)
+        {
+            Books = await GetUserBooks();
+        }
+    }
+
+    private async Task<ICollection<Book>> GetUserBooks()
+    {
+        var blId = User.BookListId;
+        
+        Books = await DbContext.Books
+            .Where(b => b.BookListId == blId)
+            .ToListAsync();
+
+        return Books;
     }
 }

@@ -1,5 +1,4 @@
 ﻿using BookTracker.App.Models;
-using BookTracker.Core.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +12,9 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         : base(options)
     {
     }
+
+    public DbSet<Book> Books { get; set; } 
+    public DbSet<BookList> BookLists { get; set; } 
     
     protected override void OnModelCreating(ModelBuilder builder)
     {

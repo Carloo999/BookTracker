@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using BookTracker.App.Models;
-
-namespace BookTracker.Core.Models;
+﻿namespace BookTracker.App.Models;
 
 public class BookList
 {
