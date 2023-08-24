@@ -15,7 +15,7 @@
     <h1>No User was found or profile is set to private</h1>
 }
 
-else 
+else
 {
     <table class="table">
         <thead>
@@ -25,9 +25,12 @@ else
             <th>Pages</th>
             <th>Pages Read</th>
             <th>Your Rating</th>
+            <th>Edit</th>
         </tr>
         </thead>
         <tbody>
+
+        @{ var index = 0; }
         @foreach (Book book in Books)
         {
             <tr>
@@ -36,7 +39,33 @@ else
                 <td>@book.Pages</td>
                 <td>@book.PagesRead</td>
                 <td>@book.Rating</td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editBookModal-@index">
+                        Edit
+                    </button>
+
+                    <!-- Bootstrap modal -->
+                    <div class="modal fade" id="editBookModal-@index">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Edit Book</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <EditForm Model="book" OnValidSubmit="@SaveBook">
+                                        <InputText class="form-control" id="title" @bind-Value="book.Title" placeholder="Title"/><br/>
+                                        <InputText class="form-control" id="author" @bind-Value="book.Author" placeholder="Author"/><br/>
+                                        <InputNumber class="form-control" id="author" @bind-Value="book.Pages" placeholder="Pages"/><br/>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </EditForm>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
             </tr>
+            index++;
         }
         </tbody>
     </table>
@@ -44,6 +73,7 @@ else
 
 
 @code {
+
     [Parameter]
     public string Username { get; set; }
 
@@ -76,11 +106,17 @@ else
     private async Task<ICollection<Book>> GetUserBooks()
     {
         var blId = User.BookListId;
-        
+
         Books = await DbContext.Books
             .Where(b => b.BookListId == blId)
             .ToListAsync();
 
         return Books;
     }
+
+    private async Task SaveBook()
+    {
+        await DbContext.SaveChangesAsync();
+    }
+
 }
