@@ -1,0 +1,64 @@
+﻿@using BookTracker.App.Models
+@using BookTracker.App.Services
+@inject IBookManagementService BookManagementService
+
+ <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createBookModal">
+        Create Book
+    </button>
+
+    <!-- Modal Structure -->
+    <div class="modal fade" id="createBookModal" tabindex="-1" aria-labelledby="createBookModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createBookModalLabel">Create New Book</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Modal Form -->
+                    <form>
+                        <div class="mb-3">
+                            <label for="bookTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="bookTitle" @bind="_newBook.Title" required="required">
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookAuthor" class="form-label">Author</label>
+                            <input type="text" class="form-control" id="bookAuthor" @bind="_newBook.Author" required="required">
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookPages" class="form-label">Pages</label>
+                            <input type="number" class="form-control" id="bookPages" @bind="_newBook.Pages">
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookPagesRead" class="form-label">Pages read</label>
+                            <input type="number" class="form-control" id="bookPagesRead" @bind="_newBook.PagesRead">
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookRating" class="form-label">Rating</label>
+                            <input type="number" class="form-control" id="bookRating" @bind="_newBook.Rating">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="() => _newBook =new Book()">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" @onclick="BookAdded">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@code {
+    [Parameter] 
+    public ApplicationUser User { get; set; }
+    [Parameter]
+    public EventCallback OnBookAdded { get; set; }
+    private Book _newBook = new();
+
+    private async Task BookAdded()
+    {
+        await BookManagementService.AddNewBook(_newBook, User); 
+        _newBook =new Book();
+        await OnBookAdded.InvokeAsync();
+    }
+}

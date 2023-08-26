@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using BookTracker.App.Areas.Identity;
 using BookTracker.App.Data;
 using BookTracker.App.Models;
+using BookTracker.App.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services
     .AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<ApplicationUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddScoped<IBookManagementService, BookManagementService>();
 
 var app = builder.Build();
 
