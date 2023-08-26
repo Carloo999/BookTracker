@@ -35,4 +35,10 @@ public class BookManagementService : IBookManagementService
             .Where(b => b.BookListId == blId)
             .ToListAsync();
     }
+
+    public async Task DeleteBook(Book book)
+    {
+        _dbContext.Books.Remove(book);
+        await SaveBook();
+    } 
 }

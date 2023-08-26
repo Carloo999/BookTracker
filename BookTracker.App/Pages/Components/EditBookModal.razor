@@ -1,0 +1,47 @@
+﻿@using BookTracker.App.Services
+@using BookTracker.App.Models
+@using System.ComponentModel.DataAnnotations
+@inject IBookManagementService BookManagementService
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editBookModal-@Index">
+    Edit
+</button>
+
+<!-- Bootstrap modal -->
+<div class="modal fade" id="editBookModal-@Index">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Book</h5>
+            </div>
+            <div class="modal-body">
+                <EditForm Model="Book" OnValidSubmit="@BookManagementService.SaveBook">
+                    <InputText class="form-control" id="title" @bind-Value="Book.Title" placeholder="Title"/><br/>
+                    <InputText class="form-control" id="author" @bind-Value="Book.Author" placeholder="Author"/><br/>
+                    <InputNumber class="form-control" id="pages" @bind-Value="Book.Pages" placeholder="Pages"/><br/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" @onclick="OnBookEdited">Save</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" @onclick="OnBookDelete">Delete</button>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+     [Parameter]
+     [Required]
+     public int Index { get; set; }
+    [Parameter]
+    [Required]
+    public Book Book { get; set; }
+    [Parameter]
+    [Required]
+    public EventCallback OnBookEdited { get; set; }
+
+    private async Task OnBookDelete()
+    {
+        await BookManagementService.DeleteBook(Book);
+        await OnBookEdited.InvokeAsync();
+    }
+}

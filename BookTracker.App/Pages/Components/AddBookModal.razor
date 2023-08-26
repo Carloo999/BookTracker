@@ -1,5 +1,6 @@
 ﻿@using BookTracker.App.Models
 @using BookTracker.App.Services
+@using System.ComponentModel.DataAnnotations
 @inject IBookManagementService BookManagementService
 
  <!-- Button trigger modal -->
@@ -50,8 +51,10 @@
 
 @code {
     [Parameter] 
+    [Required]
     public ApplicationUser User { get; set; }
     [Parameter]
+    [Required]
     public EventCallback OnBookAdded { get; set; }
     private Book _newBook = new();
 

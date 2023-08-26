@@ -3,13 +3,11 @@
 @using Microsoft.AspNetCore.Identity
 @using BookTracker.App.Models
 @using System.Security.Claims
-@using BookTracker.App.Data
 @using BookTracker.App.Pages.Components
 @using BookTracker.App.Services
 
 @inject UserManager<ApplicationUser> UserManager
 @inject AuthenticationStateProvider GetAuthenticationStateAsync
-@inject ApplicationDbContext DbContext
 @inject IBookManagementService BookManagementService
 
 @if (!Result)
@@ -42,29 +40,7 @@ else
                 <td>@book.PagesRead</td>
                 <td>@book.Rating</td>
                 <td>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editBookModal-@index">
-                        Edit
-                    </button>
-
-                    <!-- Bootstrap modal -->
-                    <div class="modal fade" id="editBookModal-@index">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Edit Book</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <EditForm Model="book" OnValidSubmit="@SaveBook">
-                                        <InputText class="form-control" id="title" @bind-Value="book.Title" placeholder="Title"/><br/>
-                                        <InputText class="form-control" id="author" @bind-Value="book.Author" placeholder="Author"/><br/>
-                                        <InputNumber class="form-control" id="pages" @bind-Value="book.Pages" placeholder="Pages"/><br/>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save</button>
-                                    </EditForm>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <EditBookModal Index="@index" Book="@book" OnBookEdited="BooksChanged"/>
                 </td>
             </tr>
             index++;
@@ -72,7 +48,7 @@ else
         </tbody>
     </table>
 
-    <AddBookModal User="@User" OnBookAdded="BookAdded"/>
+    <AddBookModal User="@User" OnBookAdded="BooksChanged"/>
     
 @code {
 
@@ -105,12 +81,7 @@ else
         }
     }
 
-    private async Task SaveBook()
-    {
-        await DbContext.SaveChangesAsync();
-    }
-
-    private async Task BookAdded()
+    private async Task BooksChanged()
     {
         Books = await BookManagementService.GetUserBooks(User);
         StateHasChanged();
