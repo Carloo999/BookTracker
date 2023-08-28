@@ -11,34 +11,36 @@ public class ApplicationUserManager : IApplicationUserManager
 {
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly ApplicationDbContext _db;
+    private readonly IWebHostEnvironment _hostEnvironment;
     
-    public ApplicationUserManager(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
+    public ApplicationUserManager(UserManager<ApplicationUser> userManager, ApplicationDbContext db, IWebHostEnvironment hostEnvironment)
     {
         _userManager = userManager;
         _db = db;
+        _hostEnvironment = hostEnvironment;
     }
 
-    private async Task AddUserToDb(ApplicationUser user, string password, byte[] profilePicture)
+    private async Task<IdentityResult> AddUserToDb(ApplicationUser user, string password, byte[] profilePicture)
     {
-        var newBl = new BookList();
-        await _db.BookLists.AddAsync(newBl);
-        user.BookList = newBl;
-        user.BookListId = newBl.Id;
-        user.ProfilePicture = new byte[1];
-        await _userManager.CreateAsync(user, password);
+        var bookList = new BookList();
+        user.BookList = bookList;
+        user.BookListId = user.BookList.Id;
+        user.ProfilePicture = profilePicture;
+        
+        return await _userManager.CreateAsync(user, password);
     }
 
-    public async Task CreateDefaultUser(ApplicationUser user, string password)
+    public async Task<IdentityResult> CreateDefaultUser(ApplicationUser user, string password)
     {
-        var defaultProfilePicture = GetDefaultImage();
+        var defaultProfilePicture = await GetDefaultImage();
         
         await _userManager.AddToRoleAsync(user, Roles.User.ToString());
-        await AddUserToDb(user, password, defaultProfilePicture.Result);
+        return await AddUserToDb(user, password, defaultProfilePicture);
     }
     
     private async Task<byte[]> GetDefaultImage()
     {
-        var imageFilePath = "/Assets/defaultProfilePicture.png";
+        var imageFilePath = Path.Combine(_hostEnvironment.WebRootPath, "Assets", "defaultProfilePicture.png");
         
         if (!File.Exists(imageFilePath))
             throw new FileNotFoundException("Image file not found.");

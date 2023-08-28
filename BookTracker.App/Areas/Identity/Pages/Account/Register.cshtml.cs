@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BookTracker.App.Data;
 using BookTracker.App.Models;
+using BookTracker.App.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -32,6 +33,7 @@ namespace BookTracker.App.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
         private readonly ApplicationDbContext _dbContext;
+        private readonly IApplicationUserManager _applicationUserManager;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
@@ -39,7 +41,7 @@ namespace BookTracker.App.Areas.Identity.Pages.Account
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender, 
-            ApplicationDbContext dbContext)
+            ApplicationDbContext dbContext, IApplicationUserManager applicationUserManager)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -48,6 +50,7 @@ namespace BookTracker.App.Areas.Identity.Pages.Account
             _logger = logger;
             _emailSender = emailSender;
             _dbContext = dbContext;
+            _applicationUserManager = applicationUserManager;
         }
 
         /// <summary>
@@ -114,15 +117,9 @@ namespace BookTracker.App.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
-                user.ProfilePicture = new byte[1];
-                var bookList = new BookList();
-                _dbContext.BookLists.Add(bookList);
-                user.BookList = bookList;
-                user.BookListId = user.BookList.Id;
-                await _dbContext.SaveChangesAsync();
                 await _userStore.SetUserNameAsync(user, Input.Username, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-                var result = await _userManager.CreateAsync(user, Input.Password);
+                var result = await _applicationUserManager.CreateDefaultUser(user, Input.Password);
 
                 if (result.Succeeded)
                 {

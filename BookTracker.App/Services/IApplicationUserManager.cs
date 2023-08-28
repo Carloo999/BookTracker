@@ -1,6 +1,7 @@
 ﻿using BookTracker.App.Enums;
 using BookTracker.App.Models;
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookTracker.App.Services;
 
@@ -14,5 +15,5 @@ public interface IApplicationUserManager
     
     Task<IList<string>> GetUserRole(ApplicationUser user);
 
-    Task CreateDefaultUser(ApplicationUser user, string password);
+    Task<IdentityResult> CreateDefaultUser(ApplicationUser user, string password);
 }
