@@ -9,7 +9,7 @@ public interface IApplicationUserManager
 {
     Task CreateUser(ApplicationUser user, string password, List<Roles> roles, byte[] profilePicture);
 
-    Task DeleteUser(ApplicationUser user);
+    Task<IdentityResult> DeleteUser(ApplicationUser user);
 
     Task<ApplicationUser?> GetUserByAuthState(AuthenticationState authenticationState);
     

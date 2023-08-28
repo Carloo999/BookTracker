@@ -6,6 +6,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using BookTracker.App.Models;
+using BookTracker.App.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -18,15 +19,17 @@ namespace BookTracker.App.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<DeletePersonalDataModel> _logger;
+        private readonly IApplicationUserManager _applicationUserManager;
 
         public DeletePersonalDataModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            ILogger<DeletePersonalDataModel> logger)
+            ILogger<DeletePersonalDataModel> logger, IApplicationUserManager applicationUserManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _applicationUserManager = applicationUserManager;
         }
 
         /// <summary>
@@ -87,7 +90,7 @@ namespace BookTracker.App.Areas.Identity.Pages.Account.Manage
                 }
             }
 
-            var result = await _userManager.DeleteAsync(user);
+            var result = await _applicationUserManager.DeleteUser(user);
             var userId = await _userManager.GetUserIdAsync(user);
             if (!result.Succeeded)
             {

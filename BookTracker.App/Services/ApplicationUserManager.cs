@@ -60,8 +60,12 @@ public class ApplicationUserManager : IApplicationUserManager
         await AddUserToDb(user, password, profilePicture);
     }
 
-    public async Task DeleteUser(ApplicationUser user)
+    public async Task<IdentityResult> DeleteUser(ApplicationUser user)
     {
+        IdentityResult result = await _userManager.DeleteAsync(user);
+
+        if (!result.Succeeded) return result;
+        
         var userBooks = GetUserBooks(user);
         foreach (Book book in userBooks)
         {
@@ -69,8 +73,10 @@ public class ApplicationUserManager : IApplicationUserManager
         }
 
         _db.BookLists.Remove(GetUserBookList(user));
+            
         await _db.SaveChangesAsync();
-        await _userManager.DeleteAsync(user);
+
+        return result;
     }
 
     public BookList GetUserBookList(ApplicationUser user)
