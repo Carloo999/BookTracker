@@ -4,13 +4,14 @@
 @using BookTracker.App.Models
 @using BookTracker.App.Pages.Components
 @using BookTracker.App.Services
+@using BookTracker.App.Enums
 
 @inject UserManager<ApplicationUser> UserManager
 @inject AuthenticationStateProvider GetAuthenticationStateAsync
 @inject IBookManagementService BookManagementService
 @inject IApplicationUserManager ApplicationUserManager
 
-@if (!Result)
+@if (!authorized)
 {
     <h1>No User was found or profile is set to private</h1>
 }
@@ -40,7 +41,10 @@ else
                 <td>@book.PagesRead</td>
                 <td>@book.Rating</td>
                 <td>
-                    <EditBookModal Index="@index" Book="@book" OnBookEdited="BooksChanged"/>
+                    @if (editable)
+                    {
+                        <EditBookModal Index="@index" Book="@book" OnBookEdited="BooksChanged"/>
+                    }
                 </td>
             </tr>
             index++;
@@ -48,35 +52,74 @@ else
         </tbody>
     </table>
 
-    <AddBookModal User="@User" OnBookAdded="BooksChanged"/>
+    @if (editable)
+    {   
+        <AddBookModal User="@User" OnBookAdded="BooksChanged"/>
+    }
     
 @code {
 
     [Parameter]
     public string Username { get; set; }
 
-    public bool Result;
+    private bool authorized;
+    private bool editable;
     public ApplicationUser? User { get; set; }
     public ICollection<Book> Books { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
+        await GetUser();
+    }
+
+    private async Task GetUser()
+    {
         if (string.IsNullOrEmpty(Username))
         {
-            AuthenticationState authState = await GetAuthenticationStateAsync.GetAuthenticationStateAsync();
-            User = ApplicationUserManager.GetUserByAuthState(authState).Result;
+            User = await GetCurrentUser();   
             Username = User.UserName;
-            Result = true;
+
+            authorized = true;
+            editable = true;
         }
         else
         {
             User = await UserManager.FindByNameAsync(Username);
-            Result = User is not null;
+            await CheckPrivacyStatus(User,await GetCurrentUser());
         }
-
-        if (Result)
-        {
+        if (authorized)
             Books = await BookManagementService.GetUserBooks(User);
+    }
+
+    private async Task<ApplicationUser?> GetCurrentUser()
+    {
+        AuthenticationState authState = await GetAuthenticationStateAsync.GetAuthenticationStateAsync();
+        return ApplicationUserManager.GetUserByAuthState(authState).Result;
+    }
+
+    private async Task CheckPrivacyStatus(ApplicationUser owner, ApplicationUser? currentUser)
+    {
+        IList<string> roles;
+
+        if (currentUser is not null)
+        {
+            roles = await ApplicationUserManager.GetUserRole(currentUser);
+            
+        }
+        else
+        {
+            roles = new List<string>();
+        }        
+        if (roles.Contains(Roles.Admin.ToString()) || roles.Contains(Roles.Owner.ToString()))
+        {
+            authorized = true;
+            editable = true;
+        }
+        else
+        {
+            PrivacyStatus status = owner.PrivacyStatus;
+
+            authorized = status == PrivacyStatus.Public;
         }
     }
 
