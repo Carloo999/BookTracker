@@ -2,13 +2,13 @@
 @page "/BookList/{Username}"
 @using Microsoft.AspNetCore.Identity
 @using BookTracker.App.Models
-@using System.Security.Claims
 @using BookTracker.App.Pages.Components
 @using BookTracker.App.Services
 
 @inject UserManager<ApplicationUser> UserManager
 @inject AuthenticationStateProvider GetAuthenticationStateAsync
 @inject IBookManagementService BookManagementService
+@inject IApplicationUserManager ApplicationUserManager
 
 @if (!Result)
 {
@@ -64,8 +64,7 @@ else
         if (string.IsNullOrEmpty(Username))
         {
             AuthenticationState authState = await GetAuthenticationStateAsync.GetAuthenticationStateAsync();
-            ClaimsPrincipal claims = authState.User;
-            User = await UserManager.GetUserAsync(claims);
+            User = ApplicationUserManager.GetUserByAuthState(authState).Result;
             Username = User.UserName;
             Result = true;
         }

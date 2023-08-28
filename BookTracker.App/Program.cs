@@ -29,7 +29,7 @@ builder.Services
     .AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<ApplicationUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<IBookManagementService, BookManagementService>();
-
+builder.Services.AddScoped<IApplicationUserManager, ApplicationUserManager>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -55,5 +55,28 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+    var appUserManager = services.GetRequiredService<IApplicationUserManager>();
+    try
+    {
+        var context = services.GetRequiredService<ApplicationDbContext>();
+        if (context.Database.IsSqlite() && context.Database.CanConnect())
+        {
+            var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+            var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+            await ContextSeed.SeedRolesAsync(userManager, roleManager);
+            await ContextSeed.SeedOwnerAsync(userManager, roleManager, appUserManager);
+        }
+    }
+    catch (Exception ex)
+    {
+        var logger = loggerFactory.CreateLogger<Program>();
+        logger.LogError(ex, "An error occurred seeding the DB.");
+    }
+}
 
 app.Run();
