@@ -16,4 +16,8 @@ public interface IApplicationUserManager
     Task<IList<string>> GetUserRole(ApplicationUser user);
 
     Task<IdentityResult> CreateDefaultUser(ApplicationUser user, string password);
+
+    Task<(bool, bool)> GetIsAuthorized(ApplicationUser owner, ApplicationUser? currentUser);
+
+    Task<IdentityResult> ChangePrivacySetting(ApplicationUser user, PrivacyStatus status);
 }

@@ -101,4 +101,40 @@ public class ApplicationUserManager : IApplicationUserManager
     {
         return await _userManager.GetRolesAsync(user);
     }
+
+    public async Task<IdentityResult> ChangePrivacySetting(ApplicationUser user, PrivacyStatus status)
+    {
+        user.PrivacyStatus = status;
+        return await _userManager.UpdateAsync(user);
+    }
+
+    public async Task<(bool, bool)> GetIsAuthorized(ApplicationUser owner, ApplicationUser? currentUser)
+    {
+        PrivacyStatus status = owner.PrivacyStatus;
+        var isDisplayed = false;
+        var isEditable = false;
+
+        if (status == PrivacyStatus.Public)
+        {
+            isDisplayed = true;
+        }
+        if (currentUser is null) return (isDisplayed, false);
+        
+        if (owner.Equals(currentUser))
+        {
+            isDisplayed = true;
+            isEditable = true;
+        }
+        else
+        {
+            var roles = await GetUserRole(currentUser);
+
+            if (!roles.Contains(Roles.Admin.ToString()) && !roles.Contains(Roles.Owner.ToString()))
+                return (isDisplayed, isEditable);
+            isDisplayed = true;
+            isEditable = true;
+        }
+
+        return (isDisplayed, isEditable);
+    }
 }

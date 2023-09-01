@@ -4,16 +4,16 @@
 @using BookTracker.App.Models
 @using BookTracker.App.Pages.Components
 @using BookTracker.App.Services
-@using BookTracker.App.Enums
+@using System.Collections
 
 @inject UserManager<ApplicationUser> UserManager
 @inject AuthenticationStateProvider GetAuthenticationStateAsync
 @inject IBookManagementService BookManagementService
 @inject IApplicationUserManager ApplicationUserManager
 
-@if (!authorized)
+@if (!_authorized || User is null)
 {
-    <h1>No User was found or profile is set to private</h1>
+    <h1>@_message</h1>
 }
 
 else
@@ -41,7 +41,7 @@ else
                 <td>@book.PagesRead</td>
                 <td>@book.Rating</td>
                 <td>
-                    @if (editable)
+                    @if (_editable)
                     {
                         <EditBookModal Index="@index" Book="@book" OnBookEdited="BooksChanged"/>
                     }
@@ -52,43 +52,56 @@ else
         </tbody>
     </table>
 
-    @if (editable)
+    @if (_editable)
     {   
-        <AddBookModal User="@User" OnBookAdded="BooksChanged"/>
+        <AddBookModal User="@Owner" OnBookAdded="BooksChanged"/>
     }
     
 @code {
 
     [Parameter]
-    public string Username { get; set; }
+    public string Username { get; set; } = string.Empty;
 
-    private bool authorized;
-    private bool editable;
+    private bool _authorized;
+    private bool _editable;
     public ApplicationUser? User { get; set; }
-    public ICollection<Book> Books { get; set; }
+    public ApplicationUser? Owner { get; set; }
+    public ICollection<Book>? Books { get; set; }
+    private string _message = "Something went wrong";
 
     protected override async Task OnInitializedAsync()
     {
-        await GetUser();
+        await GetUsers();
+        if (Owner != null)
+        {
+            (_authorized, _editable) = await ApplicationUserManager.GetIsAuthorized(Owner, User);
+        }
+        if (_authorized)
+            await BooksChanged();
     }
 
-    private async Task GetUser()
+    private async Task GetUsers()
     {
         if (string.IsNullOrEmpty(Username))
         {
-            User = await GetCurrentUser();   
-            Username = User.UserName;
-
-            authorized = true;
-            editable = true;
+            User = await GetCurrentUser();
+            if (User != null)
+            {
+                Username = User.UserName!;
+                Owner = User;
+            }
+            else
+            {
+                _message = "You are not logged in!";
+            }
         }
         else
         {
-            User = await UserManager.FindByNameAsync(Username);
-            await CheckPrivacyStatus(User,await GetCurrentUser());
+            Owner = await UserManager.FindByNameAsync(Username);
+            User = await GetCurrentUser();
+            if (Owner is null)
+                _message = "No User was found!";
         }
-        if (authorized)
-            Books = await BookManagementService.GetUserBooks(User);
     }
 
     private async Task<ApplicationUser?> GetCurrentUser()
@@ -97,35 +110,9 @@ else
         return ApplicationUserManager.GetUserByAuthState(authState).Result;
     }
 
-    private async Task CheckPrivacyStatus(ApplicationUser owner, ApplicationUser? currentUser)
+    public async Task BooksChanged()
     {
-        IList<string> roles;
-
-        if (currentUser is not null)
-        {
-            roles = await ApplicationUserManager.GetUserRole(currentUser);
-            
-        }
-        else
-        {
-            roles = new List<string>();
-        }        
-        if (roles.Contains(Roles.Admin.ToString()) || roles.Contains(Roles.Owner.ToString()))
-        {
-            authorized = true;
-            editable = true;
-        }
-        else
-        {
-            PrivacyStatus status = owner.PrivacyStatus;
-
-            authorized = status == PrivacyStatus.Public;
-        }
-    }
-
-    private async Task BooksChanged()
-    {
-        Books = await BookManagementService.GetUserBooks(User);
+        Books = await BookManagementService.GetUserBooks(Owner);
         StateHasChanged();
     }
 }

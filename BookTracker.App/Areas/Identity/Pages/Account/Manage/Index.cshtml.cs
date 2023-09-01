@@ -6,7 +6,9 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using BookTracker.App.Enums;
 using BookTracker.App.Models;
+using BookTracker.App.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -17,13 +19,15 @@ namespace BookTracker.App.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly IApplicationUserManager _applicationUserManager;
 
         public IndexModel(
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager, IApplicationUserManager applicationUserManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _applicationUserManager = applicationUserManager;
         }
 
         /// <summary>
@@ -60,13 +64,17 @@ namespace BookTracker.App.Areas.Identity.Pages.Account.Manage
             
             [Display (Name = "ProfilePicture")] 
             public byte[] ProfilePicture { get; set; }
+
+            [Display(Name = "Privacy Status")]
+            public PrivacyStatus PrivacyStatus { get; set; } 
         }
 
         private async Task LoadAsync(ApplicationUser user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-            var profilePicture = user.ProfilePicture;  
+            var profilePicture = user.ProfilePicture;
+            PrivacyStatus privacyStatus = user.PrivacyStatus;
             
             Username = userName;
 
@@ -74,7 +82,8 @@ namespace BookTracker.App.Areas.Identity.Pages.Account.Manage
             {
                 PhoneNumber = phoneNumber,
                 Username = userName,
-                ProfilePicture = profilePicture
+                ProfilePicture = profilePicture,
+                PrivacyStatus = privacyStatus
             };
         }
 
@@ -115,6 +124,11 @@ namespace BookTracker.App.Areas.Identity.Pages.Account.Manage
                     StatusMessage = "Unexpected error when trying to set phone number.";
                     return RedirectToPage();
                 }
+            }
+
+            if (Input.PrivacyStatus != user.PrivacyStatus)
+            {
+                await _applicationUserManager.ChangePrivacySetting(user, Input.PrivacyStatus);
             }
             
             if (Request.Form.Files.Count > 0)
