@@ -1,6 +1,7 @@
-﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+﻿@using BookTracker.App.Enums
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <img src="/Assets/defaultProfilePicture.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             BookTracker
         </a>
@@ -17,6 +18,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/booklist">Book list</a>
                         </li>
+                        
+                        @if (context.User.IsInRole(Roles.Admin.ToString()) || context.User.IsInRole(Roles.Owner.ToString()))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/AdminDashboard">Admin Dashboard</a>
+                            </li>
+                        }
                     </Authorized>
                 </AuthorizeView>
 

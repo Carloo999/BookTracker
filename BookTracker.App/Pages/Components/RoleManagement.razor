@@ -1,0 +1,93 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@inject RoleManager<IdentityRole> RoleManager
+
+<h1>Role Manager</h1>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Role</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{ var index = 0; }
+    @foreach (IdentityRole role in _roles)
+    {
+        <tr>
+            <td>@role.Id</td>
+            <td>@role.Name</td>
+            <td><button id="deleteRole-@index" type="button" class="btn btn-primary" @onclick="() => RemoveRole(role)">Delete</button></td>
+        </tr>
+        index++;
+    }
+    </tbody>
+</table>
+
+ <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createRoleModal">
+        Create Role
+    </button>
+
+    <!-- Modal Structure -->
+    <div class="modal fade" id="createRoleModal" tabindex="-1" aria-labelledby="createRoleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createRoleModalLabel">Create New Role</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Modal Form -->
+                    <form>
+                        <div class="mb-3">
+                            <label for="roleName" class="form-label">Role name</label>
+                            <input type="text" class="form-control" id="roleName" @bind="_newRole.Name" required="required">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="() => _newRole =new IdentityRole()">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" @onclick="AddRole">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@code {
+
+    private IdentityRole _newRole = new();
+    private List<IdentityRole> _roles = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _roles = await GetRoles();
+    }
+
+    private async Task<List<IdentityRole>>  GetRoles()
+    {
+        return await RoleManager.Roles.ToListAsync();
+    }
+
+    private async Task AddRole()
+    {
+        await RoleManager.CreateAsync(_newRole);
+        await OnRoleAdded();
+    }
+
+    private async Task OnRoleAdded()
+    {
+        _newRole = new IdentityRole();
+        _roles = await GetRoles();
+        StateHasChanged();
+    }
+
+    private async Task RemoveRole(IdentityRole role)
+    {
+        await RoleManager.DeleteAsync(role);
+        _roles = await GetRoles();
+        StateHasChanged();
+    }
+}

@@ -1,6 +1,34 @@
 ﻿@page "/AdminDashboard"
-<h3>AdminDashboard</h3>
+@using BookTracker.App.Models
+@using BookTracker.App.Services
+@using BookTracker.App.Enums
+@using BookTracker.App.Pages.Components
+@inject AuthenticationStateProvider AuthProvider
+@inject IApplicationUserManager ApplicationUserManager
+
+@if (User != null && (_rolesList.Contains(Roles.Admin.ToString()) || _rolesList.Contains(Roles.Owner.ToString())))
+{
+    <h3>AdminDashboard</h3>
+    
+    <RoleManagement/>
+}
 
 @code {
+    private ApplicationUser? User;
+    private List<string> _rolesList = new(); 
+
+    protected override async void OnInitialized()
+    {
+        User = await GetCurrentUser();
+
+        if (User == null) return;
+        
+        _rolesList = (List<string>)await ApplicationUserManager.GetUserRole(User);
+    }
     
+    private async Task<ApplicationUser?> GetCurrentUser()
+    {
+        AuthenticationState authState = await AuthProvider.GetAuthenticationStateAsync();
+        return ApplicationUserManager.GetUserByAuthState(authState).Result;
+    }
 }
