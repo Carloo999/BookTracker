@@ -2,7 +2,7 @@
 @using BookTracker.App.Models
 @using BookTracker.App.Services
 @using BookTracker.App.Enums
-@using BookTracker.App.Pages.Components
+@using BookTracker.App.Pages.Components.DevTools
 @inject AuthenticationStateProvider AuthProvider
 @inject IApplicationUserManager ApplicationUserManager
 
@@ -11,6 +11,8 @@
     <h3>AdminDashboard</h3>
     
     <RoleManagement/>
+    
+    <UserManagement/>
 }
 
 @code {

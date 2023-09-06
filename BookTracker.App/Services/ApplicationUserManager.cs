@@ -137,4 +137,9 @@ public class ApplicationUserManager : IApplicationUserManager
 
         return (isDisplayed, isEditable);
     }
+
+    public List<ApplicationUser> GetUsers()
+    {
+        return _userManager.Users.ToList();
+    }
 }

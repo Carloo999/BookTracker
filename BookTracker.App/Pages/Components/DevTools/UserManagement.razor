@@ -1,0 +1,70 @@
+﻿@using BookTracker.App.Enums
+@using BookTracker.App.Models
+@using BookTracker.App.Services
+@using Microsoft.AspNetCore.Identity
+@inject IApplicationUserManager ApplicationUserManager
+@inject RoleManager<IdentityRole> RoleManager
+
+<h3>UserManagement</h3>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Privacy Status</th>
+        <th>Edit Roles</th>
+        <th>Edit User</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{ var index = 0; }
+    @foreach (UserManagementModel user in _models)
+    {
+        <tr>
+            <td>@user.UserName</td>
+            <td>@user.Email</td>
+            <td>@user.PrivacyStatus</td>
+            <td>
+                <button>Edit Roles</button>
+            </td>
+            <td>
+                <EditUserModal UserManagementModel="@user" Index="@index"/>
+            </td>
+        </tr>
+        index++;
+    }
+    </tbody>
+</table>
+
+
+@code {
+
+    private List<UserManagementModel> _models = new();
+    public UserManagementModel ManagementModel { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        var users = ApplicationUserManager.GetUsers();
+
+        foreach (ApplicationUser user in users)
+        {
+            _models.Add(new UserManagementModel()
+            {
+                Id = user.Id,
+                UserName = user.UserName,
+                Email = user.Email,
+                PrivacyStatus = user.PrivacyStatus,
+                Roles = await ApplicationUserManager.GetUserRole(user)
+            });
+        }
+    }
+    
+    public class UserManagementModel
+    {
+        public string Id { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public PrivacyStatus PrivacyStatus { get; set; }
+        public IEnumerable<string> Roles { get; set; }
+    }
+}

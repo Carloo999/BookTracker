@@ -20,4 +20,6 @@ public interface IApplicationUserManager
     Task<(bool, bool)> GetIsAuthorized(ApplicationUser owner, ApplicationUser? currentUser);
 
     Task<IdentityResult> ChangePrivacySetting(ApplicationUser user, PrivacyStatus status);
+
+    List<ApplicationUser> GetUsers();
 }
